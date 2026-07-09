@@ -1,1 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos 3 Anos</title>
+    <style>
+        /* Importando fonte romântica e moderna */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap');
 
+        :root {
+            --bg-color: #fcf9f9;
+            --text-color: #2c2c2c;
+            --accent-color: #d4a373; /* Tom amadeirado/dourado combinando com o MDF */
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(212,163,115,0.15) 0%, rgba(252,249,249,1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .main-photo {
+            width: 100%;
+            max-width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Contador */
+        .counter-section {
+            padding: 30px 20px;
+        }
+
+        .counter-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .counter-box {
+            background-color: var(--card-bg);
+            padding: 15px 10px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(212,163,115,0.2);
+        }
+
+        .counter-box span {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .counter-box small {
+            font-size: 0.75rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Spotify Player */
+        .spotify-section {
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Timeline de Fotos */
+        .timeline {
+            padding: 40px 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .timeline h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            text-align: left;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Nossos 3 Anos</h1>
+        <p>A melhor escolha que eu já fiz.</p>
+        <!-- INSIRA A URL DA FOTO PRINCIPAL ABAIXO -->
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600&auto=format&fit=crop" alt="Nós" class="main-photo">
+    </section>
+
+    <!-- CONTADOR DE TEMPO -->
+    <section class="counter-section">
+        <h2>Cada segundo importa</h2>
+        <div class="counter-grid">
+            <div class="counter-box"><span id="years">0</span><small>Anos</small></div>
+            <div class="counter-box"><span id="months">0</span><small>Meses</small></div>
+            <div class="counter-box"><span id="days">0</span><small>Dias</small></div>
+            <div class="counter-box"><span id="hours">0</span><small>Horas</small></div>
+            <div class="counter-box"><span id="minutes">0</span><small>Minutos</small></div>
+            <div class="counter-box"><span id="seconds">0</span><small>Segundos</small></div>
+        </div>
+    </section>
+
+    <!-- PLAYER SPOTIFY -->
+    <section class="spotify-section">
+        <!-- VÁ NO SPOTIFY > COMPARTILHAR SUA MÚSICA OU PLAYLIST > INCORPORAR (EMBED) E COLE O CÓDIGO AQUI -->
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4eLvbJb2W4xK4Z7XGEiOqF?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+
+    <!-- LINHA DO TEMPO (FOTOS DOS NICHOS) -->
+    <section class="timeline">
+        <h2>Nossa História</h2>
+
+        <!-- CARTA 1 -->
+        <div class="card">
+            <!-- INSIRA A URL DA FOTO 1 -->
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600&auto=format&fit=crop" alt="Foto 1">
+            <div class="card-content">
+                <h3>Onde tudo começou</h3>
+                <p>Aqui você pode colocar um pedacinho da cartinha nº 1 ou explicar o contexto dessa foto que estava escondida no fundo do escaninho.</p>
+            </div>
+        </div>
+
+        <!-- CARTA 2 -->
+        <div class="card">
+            <!-- INSIRA A URL DA FOTO 2 (Ex: A foto com o padre) -->
+            <img src="https://images.unsplash.com/photo-1529634597503-139d3726feed?q=80&w=600&auto=format&fit=crop" alt="Foto Fé">
+            <div class="card-content">
+                <h3>Nossa Fé</h3>
+                <p>Obrigado por fortalecer minha fé todos os dias. Essa foto representa muito mais do que apenas um momento.</p>
+            </div>
+        </div>
+
+        <!-- CARTA 3 (Copie e cole este bloco de "card" para fazer os 12) -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?q=80&w=600&auto=format&fit=crop" alt="Foto 3">
+            <div class="card-content">
+                <h3>Nossas Aventuras</h3>
+                <p>Cada viagem, cada passeio de domingo. Ao seu lado, a rotina vira uma aventura.</p>
+            </div>
+        </div>
+        <!-- FIM DO BLOCO DA CARTA 3 -->
+
+    </section>
+
+    <footer>
+        Com amor, sempre.<br>
+        12 Motivos para te amar.
+    </footer>
+
+    <!-- LÓGICA DO CONTADOR DE NAMORO -->
+    <script>
+        // ATENÇÃO: COLOQUE A DATA DO INÍCIO DO NAMORO AQUI (Ano, Mês-1, Dia, Hora, Minuto)
+        // Obs: O mês no JavaScript começa em 0 (Janeiro = 0, Fevereiro = 1... Julho = 6)
+        // Exemplo: 15 de Julho de 2021 às 20:00 -> new Date(2021, 6, 15, 20, 0, 0)
+        const startDate = new Date(2021, 6, 9, 0, 0, 0); 
+
+        function updateCounter() {
+            const now = new Date();
+            
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            let days = now.getDate() - startDate.getDate();
+            let hours = now.getHours() - startDate.getHours();
+            let minutes = now.getMinutes() - startDate.getMinutes();
+            let seconds = now.getSeconds() - startDate.getSeconds();
+
+            // Ajustes matemáticos para virada de datas
+            if (seconds < 0) { seconds += 60; minutes--; }
+            if (minutes < 0) { minutes += 60; hours--; }
+            if (hours < 0) { hours += 24; days--; }
+            if (days < 0) {
+                const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += lastMonth.getDate();
+                months--;
+            }
+            if (months < 0) {
+                months += 12;
+                years--;
+            }
+
+            // Atualizando o HTML
+            document.getElementById('years').innerText = years;
+            document.getElementById('months').innerText = months;
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+
+        // Inicia o contador e atualiza a cada 1 segundo
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
